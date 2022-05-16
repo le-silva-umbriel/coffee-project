@@ -1,33 +1,40 @@
 "use strict"
+let coffeeOptions = document.getElementById("left-side");
+document.getElementById("submit").addEventListener("click", updateCoffees);
+let roastSelection = document.querySelector("#roast-selection");
+let userinput = document.querySelector("#coffee-name");
 
-function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+document.getElementById("coffee-name").addEventListener("change", updateCoffees2);
 
-    return html;
-}
 
-function renderCoffees(coffees) {
-    var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
-        html += renderCoffee(coffees[i]);
-    }
-    return html;
+function updateCoffees2(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    let inputs = userinput.value;
+
+console.log(inputs);
+
+    let str = '';
+    coffees.forEach(function(coffee) {
+        if (coffee.name.toLowerCase().includes( inputs.toLowerCase())) {
+            str += "<div class=\'col-6\'>" + coffee.name +  " " + "<i>" + coffee.roast + "</i></div>";
+
+        }
+    });
+    coffeeOptions.innerHTML = str;
 }
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
+    let selectedRoast = roastSelection.value;
+    // console.log(selectedRoast);
+    let str = '';
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
+          str += "<div class=\'col-6\'>" + coffee.name +  " " + "<i>" + coffee.roast + "</i></div>";
+
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    coffeeOptions.innerHTML = str;
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -47,11 +54,11 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
+//
 
-var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
 
-tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+
+
+
+
