@@ -19,33 +19,36 @@
         </div>
 <!--        right column display coffee by roast type (light/medium/dark)-->
         <div id="right-side" class="col-6">
-            <h2>Select Coffee by Roast</h2>
+            <h2 class="d-flex w-100">Select Coffee by Roast</h2>
             <form>
                 <label for="roast-selection"></label>
-                <select id="roast-selection">
+                <select class="form-select" id="roast-selection">
                     <option>all</option>
                     <option>light</option>
                     <option>medium</option>
                     <option>dark</option>
                 </select>
-                <input id="submit" type="submit" />
+                <br>
+                <input class="d-flex w-100"  id="submit" type="submit" />
             </form>
             <!-- roast by name -->
             <hr>
             <h2>Select Coffee by Name</h2>
             <form id="roast-name-type">
-                <input id="coffee-name" name="coffee-name" type="text">
+                <input class="form-control" id="coffee-name" name="coffee-name" type="text">
             </form>
             <!-- add new coffee option-->
             <hr>
             <h2>Add New Coffee</h2>
-            <select id="roast-selection2">
+            <select class="form-select" id="roast-selection2">
                 <option>light</option>
                 <option>medium</option>
                 <option>dark</option>
             </select>
-            <input id="coffee-name2" name="coffee-name2" placeholder="New Coffee Name" type="text">
-            <input id="submit2" type="submit" />
+            <br>
+            <input class="form-control" id="coffee-name2" name="coffee-name2" placeholder="New Coffee Name" type="text">
+            <br>
+            <input class="d-flex w-100" id="submit2" type="submit" />
 <!--            right side end-->
         </div>
     </div>
