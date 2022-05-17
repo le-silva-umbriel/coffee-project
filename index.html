@@ -19,7 +19,7 @@
         </div>
 <!--        right column display coffee by roast type (light/medium/dark)-->
         <div id="right-side" class="col-6">
-            <h2 class="d-flex w-100">Select Coffee by Roast</h2>
+            <h2 class="d-flex w-100">Select Coffee by Roast or Name</h2>
             <form>
                 <label for="roast-selection"></label>
                 <select class="form-select" id="roast-selection">
@@ -28,15 +28,13 @@
                     <option>medium</option>
                     <option>dark</option>
                 </select>
+                <input class="form-control" id="coffee-name" name="coffee-name" type="text">
                 <br>
                 <input class="d-flex w-100"  id="submit" type="submit" />
             </form>
             <!-- roast by name -->
-            <hr>
-            <h2>Select Coffee by Name</h2>
-            <form id="roast-name-type">
-                <input class="form-control" id="coffee-name" name="coffee-name" type="text">
-            </form>
+
+
             <!-- add new coffee option-->
             <hr>
             <h2>Add New Coffee</h2>

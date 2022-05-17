@@ -1,5 +1,6 @@
 "use strict"
 //fills in left side coffee options
+
 let coffeeOptions = document.getElementById("left-side");
 document.getElementById("submit").addEventListener("click", updateCoffees);
 //right side input for "select coffee by roast"
@@ -13,7 +14,10 @@ let lastSubmit = document.getElementById("submit2")
 // associated last submit button
 lastSubmit.addEventListener("click", updateCoffees3);
 let userinput2 = document.querySelector("#coffee-name2");
+
 let roastSelection2 = document.querySelector("#roast-selection2");
+
+let selectedRoast = roastSelection.value;
 
 //updates coffee3
 function updateCoffees3(e) {
@@ -45,7 +49,7 @@ function updateCoffees2(e) {
 
     let str = '';
     coffees.forEach(function (coffee) {
-        if (coffee.name.toLowerCase().includes(inputs.toLowerCase())) {
+        if (  (coffee.name.toLowerCase().includes(inputs.toLowerCase()) ) && ( (coffee.roast === selectedRoast) || (selectedRoast === "all"))          ) {
             str += "<div class=\'col-6\'>" + coffee.name + " " + "<span class=\'text-muted\'>" + coffee.roast + "</span></div>";
         }
     });
@@ -54,11 +58,12 @@ function updateCoffees2(e) {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast = roastSelection.value;
+    selectedRoast = roastSelection.value;
     // console.log(selectedRoast);
     let str = '';
+
     coffees.forEach(function (coffee) {
-        if ((coffee.roast === selectedRoast) || (selectedRoast === "all")){
+        if ( (coffee.roast === selectedRoast) || (selectedRoast === "all")){
             str += "<div class=\'col-6\'>" + coffee.name + " " + "<span class=\'text-muted\'>" + coffee.roast + "</span></div>";
 
         }
