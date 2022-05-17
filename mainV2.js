@@ -71,6 +71,7 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+roastSelection.addEventListener("change", updateCoffees);
 let inputValue = document.querySelector('#coffee-name');
 inputValue.addEventListener('input', updateCoffees2)
 
