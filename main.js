@@ -31,7 +31,7 @@ function updateCoffees3(e) {
     let str = '';
     coffees.forEach(function (coffee) {
         if (coffee.name.toLowerCase().includes(inputs.toLowerCase())) {
-            str += "<div class=\'col-6\'>" + coffee.name + " " + "<i>" + coffee.roast + "</i></div>";
+            str += "<div class=\'col-6\'>" + coffee.name + " " + "<span class=\'text-muted\'>" + coffee.roast + "</span></div>";
         }
     });
     coffeeOptions.innerHTML = str;
@@ -46,7 +46,7 @@ function updateCoffees2(e) {
     let str = '';
     coffees.forEach(function (coffee) {
         if (coffee.name.toLowerCase().includes(inputs.toLowerCase())) {
-            str += "<div class=\'col-6\'>" + coffee.name + " " + "<i>" + coffee.roast + "</i></div>";
+            str += "<div class=\'col-6\'>" + coffee.name + " " + "<span class=\'text-muted\'>" + coffee.roast + "</span></div>";
         }
     });
     coffeeOptions.innerHTML = str;
@@ -59,7 +59,7 @@ function updateCoffees(e) {
     let str = '';
     coffees.forEach(function (coffee) {
         if ((coffee.roast === selectedRoast) || (selectedRoast === "all")){
-            str += "<div class=\'col-6\'>" + coffee.name + " " + "<i>" + coffee.roast + "</i></div>";
+            str += "<div class=\'col-6\'>" + coffee.name + " " + "<span class=\'text-muted\'>" + coffee.roast + "</span></div>";
 
         }
     });
