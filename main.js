@@ -1,23 +1,52 @@
 "use strict"
+//fills in left side coffee options
 let coffeeOptions = document.getElementById("left-side");
 document.getElementById("submit").addEventListener("click", updateCoffees);
+//right side input for "select coffee by roast"
 let roastSelection = document.querySelector("#roast-selection");
+//right side, second option by coffee by name
 let userinput = document.querySelector("#coffee-name");
+//
+document.getElementById("coffee-name").addEventListener("input", updateCoffees2);
 
-document.getElementById("coffee-name").addEventListener("change", updateCoffees2);
+let lastSubmit = document.getElementById("submit2")
+// associated last submit button
+lastSubmit.addEventListener("click", updateCoffees3);
+let userinput2 = document.querySelector("#coffee-name2");
+let roastSelection2 = document.querySelector("#roast-selection2");
 
+//updates coffee3
+function updateCoffees3(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    let inputs = userinput2.value;
+    let roasttype2 = roastSelection2.value;
 
+    console.log(inputs);
+    let newcoffee = {};
+    newcoffee.id = coffees.length;
+    newcoffee.name = inputs;
+    newcoffee.roast = roasttype2;
+    coffees.push(newcoffee);
+
+    let str = '';
+    coffees.forEach(function (coffee) {
+        if (coffee.name.toLowerCase().includes(inputs.toLowerCase())) {
+            str += "<div class=\'col-6\'>" + coffee.name + " " + "<i>" + coffee.roast + "</i></div>";
+        }
+    });
+    coffeeOptions.innerHTML = str;
+
+}
 function updateCoffees2(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let inputs = userinput.value;
 
-console.log(inputs);
+    console.log(inputs);
 
     let str = '';
-    coffees.forEach(function(coffee) {
-        if (coffee.name.toLowerCase().includes( inputs.toLowerCase())) {
-            str += "<div class=\'col-6\'>" + coffee.name +  " " + "<i>" + coffee.roast + "</i></div>";
-
+    coffees.forEach(function (coffee) {
+        if (coffee.name.toLowerCase().includes(inputs.toLowerCase())) {
+            str += "<div class=\'col-6\'>" + coffee.name + " " + "<i>" + coffee.roast + "</i></div>";
         }
     });
     coffeeOptions.innerHTML = str;
@@ -28,9 +57,9 @@ function updateCoffees(e) {
     let selectedRoast = roastSelection.value;
     // console.log(selectedRoast);
     let str = '';
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-          str += "<div class=\'col-6\'>" + coffee.name +  " " + "<i>" + coffee.roast + "</i></div>";
+    coffees.forEach(function (coffee) {
+        if ((coffee.roast === selectedRoast) || (selectedRoast === "all")){
+            str += "<div class=\'col-6\'>" + coffee.name + " " + "<i>" + coffee.roast + "</i></div>";
 
         }
     });
@@ -55,10 +84,3 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 //
-
-
-
-
-
-
-
