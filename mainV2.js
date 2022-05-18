@@ -1,7 +1,14 @@
 "use strict"
-let coffeeBank = [];
 
-function saveBAnk
+// function saveBank (){
+//     if (localStorage.getItem("coffeeBank")) {
+//         coffees = localStorage.getItem("coffeeBank")
+//     } else {
+//         localStorage.setItem("coffeeBank", coffees);
+//     }
+// }
+// // saveBank();
+
 
 
 function renderCoffee(coffee) {
@@ -51,6 +58,7 @@ function updateCoffees3(e) {
     var selectedName = document.getElementById("coffee-name2").value;
     var selectedRoast = document.getElementById("roast-selection2").value;
     coffees.push({id:coffees.length, name:selectedName, roast:selectedRoast});
+
     tbody.innerHTML = renderCoffees(coffees, 'all');
 }
 
