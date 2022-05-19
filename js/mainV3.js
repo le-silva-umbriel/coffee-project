@@ -71,6 +71,17 @@ function updateCoffees3(e) {
     addHover();
 }
 
+document.body.addEventListener("mousemove", clickCounter)
+
+function clickCounter() {
+    if (localStorage.clickcount) {
+        localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+        localStorage.clickcount = 1;
+    }
+    document.getElementById("salesCount").innerHTML = "Sales count:" + localStorage.clickcount;
+}
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
