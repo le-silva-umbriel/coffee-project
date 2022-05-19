@@ -1,0 +1,35 @@
+.anime {
+    animation-duration: 1.1s;
+    font-family: "Lobster", Sans-serif;
+
+}
+
+hr {
+    height: 0px;
+    border: none;
+    border-top: 9px solid rgba(102, 126, 102, 0.3);
+}
+
+.imgHeight{
+    height: 200px;
+    object-fit: cover;
+}
+
+.borderDark {
+    border: 9px solid black;
+}
+
+@keyframes example {
+    0%   {background-color: #639494; left:0px; top:0px;}
+    25%  {background-color: #7c8ead; left:200px; top:0px;}
+    50%  {background-color: #5e5e6b; left:200px; top:200px;}
+    75%  {background-color: #515959; left:0px; top:200px;}
+    100% {background-color: #311515; left:0px; top:0px;}
+}
+
+.cof {
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+
+}
