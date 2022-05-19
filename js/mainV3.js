@@ -44,6 +44,7 @@ function updateCoffees(e) {
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees, 'all');
+    addHover();
 }
 
 function updateCoffees2(e) {
@@ -57,6 +58,7 @@ function updateCoffees2(e) {
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees, 'all');
+    addHover();
 }
 
 function updateCoffees3(e) {
@@ -66,6 +68,7 @@ function updateCoffees3(e) {
     coffees.push({id:coffees.length, name:selectedName, roast:selectedRoast});
 
     tbody.innerHTML = renderCoffees(coffees, 'all');
+    addHover();
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -105,3 +108,15 @@ submitButton.addEventListener('click', updateCoffees);
 
 var submitButton2 = document.querySelector('#submit2');
 submitButton2.addEventListener('click', updateCoffees3);
+
+function addHover() {
+    $('.card').hover(
+        function () {
+            $(this).toggleClass("hoverColor");
+        },
+        function () {
+            $(this).toggleClass("hoverColor");
+        }
+    );
+}
+addHover();

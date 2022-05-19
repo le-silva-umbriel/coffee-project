@@ -4,6 +4,11 @@
 
 }
 
+.hoverColor{
+    background-color: hotpink;
+}
+
+
 hr {
     height: 0px;
     border: none;
